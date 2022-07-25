@@ -1,0 +1,85 @@
+the first line for every bash script should be a shebang line
+i.e. #!/bin/bash
+
+the bash scripts should be executable
+i.e. chmod +x <script_name>
+
+bash comments start with a #
+
+bash variables
+________________
+1. system variables
+  - they start with capital letters
+2. user variables- $USER
+   - mostly start with small letters
+
+examples of system variables
+ $BASH, $BASH_VERSION, $HOME, $PWD, $SHELL, $TERM, $HOSTNAME, $HOSTTYPE, $OSTYPE, $MACHTYPE, $SECONDS, $PID, $PPID, $UID, $GID, $SHLVL, $0, $1, $2, $3, $4, $5, $6, $7, $8, $9
+
+nb: - the variable name and value are separated by an equal sign minus space
+    - variable names are case sensitive
+    - variable names can be any combination of letters, numbers, underscores, and hyphens
+    - variable names cannot start with a number
+    - variable names cannot contain spaces
+
+READING USER INPUT
+__________________
+use the read commmand to get user input
+the name that comes after the read word is the name of the variable that will hold the user input
+
+BASH ARGUMENTS
+______________
+the arguments that are passed to a bash script are stored in an array called $@
+the first argument is stored in $1, the second in $2, etc.
+$0 is the name of the script
+
+IF STATEMENTS
+_____________
+if [ condition ]
+then
+    statements
+fi
+
+NB:
+integer comparison operators
+____________________________
+
+-eq: equal to
+-ne: not equal to
+-gt: greater than
+-ge: greater than or equal to
+-lt: less than
+-le: less than or equal to
+
+  **** (when using the angle brackets, use double parentheses for the if statements)
+  i.e
+  if (( $1 > $2 ))
+  then
+    echo "The first number is greater than the second"
+  fi
+
+  **** for strings, when using the angle brackets, use double square brackets for the if statements
+  i.e
+  if [[ $word < "b]]
+  then
+    echo "The word is less than b"
+  fi
+< : less than 
+> : greater than
+<= : less than or equal to
+>= : greater than or equal to
+
+string comparison operators
+____________________________
+
+-z: string is empty (has zero length)
+-n: string is not empty (has non-zero length)
+==: string is equal to
+=: string is equal to
+!=: string is not equal to
+<>: string is not equal to
+>: string is greater than, in ASCII aphabetical order
+<: string is less than, in ASCII alphabetical order
+
+
+
