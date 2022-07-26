@@ -81,5 +81,71 @@ ____________________________
 >: string is greater than, in ASCII aphabetical order
 <: string is less than, in ASCII alphabetical order
 
+FILE TEST operators
+___________________ 
+-e file: file exists
+-d file: directory exists
+-f file: regular file exists (not a directory)
+-r file: file is readable
+-w file: file is writable
+-x file: file is executable
+-s file: file has non-zero size
+-t file: file is a terminal (i.e. a TTY)
+-z file: file has zero size
+-c file: file is a character device
+-b file: file is a block device
+-p file: file is a named pipe
+-S file: file is a socket
+-u file: file has been changed since it was last read
+-g file: file has been changed since it was last written
+-k file: file has sticky bit set
+-o file: file has the setuid bit set
+-O file: file has the setgid bit set
+-L file: file is a symbolic link
+-h file: file is a symbolic link
+-G file: file is a symbolic link
 
+LOGICAL AND OPERATOR
+____________________
+&& or -a
 
+LOGICAL OR OPERATOR
+____________________
+|| or -o
+
+ARITHMETIC OPERATORS
+____________________
+echo considers the content to be a string
+use $(( expression )) to evaluate the expression as an integer
+or $(expr $var1 $op $var2)
+
+FLOAT POINT OPERATORS
+____________________
+we need to use a special tool bc
+
+the expression on the left is taken as an input for the right when pipe is used
+e.G
+echo "20.5 + 10.5" | bc
+# the echo is taken as an input for the bc command
+
+SWITCH STATEMENTS (CASE STATEMENTS)
+____________________________________
+
+case expression in
+    pattern1)
+        statements
+        ;;
+    pattern2)
+        statements
+        ;;
+    pattern3)
+        statements
+        ;;
+    *)
+        statements
+        ;;
+esac
+
+ARRAY DECLARATIONS
+__________________
+syntax: array_name=(element1 element2 element3 ...)
